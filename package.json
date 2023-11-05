@@ -2,6 +2,9 @@
   "name": "ecommerce-project",
   "version": "1.0.0",
   "description": "React capstone project.",
+  "engines": {
+    "node": "14.21.3"
+  },
   "scripts": {
     "preinstall": "npm set audit false",
     "start": "webpack-dev-server --config webpack/dev.config.js --watch",
