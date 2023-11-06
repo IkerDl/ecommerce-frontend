@@ -28,7 +28,7 @@ class AuthPage extends Component {
     const { isRegister, firstname, lastname, email, password } = this.state;
   
     try {
-      const url = isRegister ? "http://localhost:5000/user/register" : "http://localhost:5000/login";
+      const url = isRegister ? "https://ecommerce-back-d6168f94499c.herokuapp.com/user/register" : "https://ecommerce-back-d6168f94499c.herokuapp.com/login";
       const body = isRegister
         ? { users_firstname: firstname, users_lastname: lastname, users_email: email, users_password: password }
         : { users_email: email, users_password: password };

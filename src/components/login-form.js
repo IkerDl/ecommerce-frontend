@@ -22,7 +22,7 @@ class LoginPage extends Component {
     const { email, password } = this.state;
 
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("https://ecommerce-back-d6168f94499c.herokuapp.com/login", {
         users_email: email,
         users_password: password
       });

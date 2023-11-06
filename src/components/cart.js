@@ -27,7 +27,7 @@ export default class Cart extends Component {
       return; // If user is not logged in, no cart
     }
     
-    axios.get(`http://localhost:5000/cart/user/${this.userId}`)
+    axios.get(`https://ecommerce-back-d6168f94499c.herokuapp.com/cart/user/${this.userId}`)
       .then(response => {
         if (response.status === 200) {
           this.setState({ cartItems: response.data });
@@ -43,7 +43,7 @@ export default class Cart extends Component {
   
   editCartItemQuantity = (productId, action) => {
     const userId = this.props.userId;
-    axios.put(`http://localhost:5000/cart/edit_quantity/${productId}`, { user_id: userId, action })
+    axios.put(`https://ecommerce-back-d6168f94499c.herokuapp.com/cart/edit_quantity/${productId}`, { user_id: userId, action })
       .then(response => {
         if (response.data.quantity <1 && action === "decrease") {
           this.removeFromCart(productId);
@@ -66,7 +66,7 @@ export default class Cart extends Component {
 
   removeFromCart = (productId) => {
     const userId = this.props.userId;
-    axios.delete(`http://localhost:5000/cart/remove/${userId}/${productId}`)
+    axios.delete(`https://ecommerce-back-d6168f94499c.herokuapp.com/cart/remove/${userId}/${productId}`)
       .then(response => {
         
         const updatedCart = this.state.cartItems.filter(item => item.product_id !== productId);

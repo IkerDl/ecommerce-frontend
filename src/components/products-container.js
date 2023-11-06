@@ -19,7 +19,7 @@ export default class ProductsComponent extends Component {
   
     // Check if the userId is valid (not null or undefined) before making the POST request.
     if (userId) {
-      axios.post(`http://localhost:5000/cart/add/${productId}`, { user_id: userId })
+      axios.post(`https://ecommerce-back-d6168f94499c.herokuapp.com/cart/add/${productId}`, { user_id: userId })
         .then(response => {
           console.log("Server response:", response.data);
   
@@ -36,7 +36,7 @@ export default class ProductsComponent extends Component {
   
 
   componentDidMount() {
-    axios.get('http://localhost:5000/product/get')
+    axios.get('https://ecommerce-back-d6168f94499c.herokuapp.com/product/get')
       .then(response => {
         this.setState({ productsItems: response.data });
       })

@@ -18,7 +18,7 @@ export default class CheckoutComponent extends Component {
 
   emptyCart = () => {
     const userId = this.props.location.state.userId; 
-    axios.delete(`http://localhost:5000/cart/empty/${userId}`)
+    axios.delete(`https://ecommerce-back-d6168f94499c.herokuapp.com/cart/empty/${userId}`)
       .then(response => {
         console.log('Shopping cart emptied successfully:', response.data);
       })
